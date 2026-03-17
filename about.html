@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Logos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:        #1a1714;
+      --ink-light:  #5a5450;
+      --ink-faint:  #9a9490;
+      --paper:      #faf8f4;
+      --paper-warm: #f2ede4;
+      --accent:     #b04a2a;
+      --accent-dim: #d4795e;
+      --rule:       #ddd8cf;
+      --col:        680px;
+      --wide:       900px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      z-index: 50;
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .site-name {
+      font-family: 'Cormorant SC', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ─── Page Header ────────────────────────────────────── */
+    .page-header {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 4.5rem 2rem 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .page-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Cormorant SC', serif;
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Profile Block ──────────────────────────────────── */
+    .profile {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .profile-left {
+      position: sticky;
+      top: 80px;
+    }
+
+    .profile-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Decorative placeholder — replace with <img> */
+    .profile-portrait::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 40% 35%, #c4956a28 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 75%, #b04a2a14 0%, transparent 55%),
+        linear-gradient(170deg, #ede7de 0%, #d8d0c4 100%);
+    }
+
+    .profile-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4956a' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .portrait-caption {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      color: var(--ink-faint);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* Replace the placeholder with your own photo:
+       <img src="images/your-photo.jpg" alt="Your Name"
+            style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+    */
+
+    /* ─── Profile Right ──────────────────────────────────── */
+    .profile-right {}
+
+    .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .profile-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .profile-body p {
+      margin-bottom: 1.4em;
+      font-weight: 300;
+    }
+
+    .profile-body p:last-child { margin-bottom: 0; }
+
+    .profile-body em {
+      font-style: italic;
+      color: var(--ink-light);
+    }
+
+    /* ─── Divider ─────────────────────────────────────────── */
+    .section-divider {
+      max-width: var(--wide);
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .section-divider hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ─── Interests / Themes ─────────────────────────────── */
+    .interests-wrap {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+
+    .interest-card {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+    }
+
+    .interest-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--rule);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .interest-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .interest-card p {
+      font-size: 0.88rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* ─── Selected Essays ────────────────────────────────── */
+    .essays-wrap {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 2rem 3rem;
+    }
+
+    .essay-list-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: baseline;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+
+    .essay-list-item:first-child { border-top: 1px solid var(--rule); }
+    .essay-list-item:hover .essay-list-title { color: var(--accent); }
+
+    .essay-list-left {}
+
+    .essay-list-cat {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .essay-list-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.25;
+      transition: color 0.2s;
+    }
+
+    .essay-list-right {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ─── Contact ────────────────────────────────────────── */
+    .contact-wrap {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .contact-box {
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-text p {
+      font-size: 0.95rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-link:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-link:hover { color: var(--accent); }
+
+    .contact-link-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      min-width: 60px;
+    }
+
+    .contact-link-val { font-weight: 400; }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+    }
+
+    footer a { color: var(--ink-faint); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .profile { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-left { position: static; display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; align-items: start; }
+      .portrait-caption { text-align: left; }
+      .interests-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-box { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+      .profile-left { grid-template-columns: 1fr; }
+      .profile-portrait { max-width: 200px; }
+      .interests-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Logos</a>
+      <ul class="nav-links">
+        <li><a href="#">Philosophy</a></li>
+        <li><a href="#">Mathematics</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="#">Society</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── Page Header ──────────────────────────────────── -->
+  <div class="page-header">
+    <div class="page-eyebrow">The Editor</div>
+    <h1>About</h1>
+  </div>
+
+  <!-- ─── Profile ─────────────────────────────────────── -->
+  <div class="profile">
+
+    <div class="profile-left">
+      <div class="profile-portrait">
+        <!--
+          REPLACE WITH YOUR OWN PHOTO:
+          <img src="images/your-photo.jpg" alt="Your Name"
+               style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+        -->
+      </div>
+      <p class="portrait-caption">Your photo here</p>
+    </div>
+
+    <div class="profile-right">
+      <h2 class="profile-name">Your Name Here</h2>
+      <p class="profile-title">Your Title · Your Institution or Affiliation</p>
+
+      <div class="profile-body">
+        <p>
+          Write a short opening paragraph here — who you are and what draws you
+          to these ideas. Two or three sentences that set the tone. Think of it
+          as the first line of an essay: it should make someone want to read on.
+        </p>
+        <p>
+          A second paragraph about your background, education, or intellectual
+          journey. Where did you come from? What questions have shaped your
+          thinking? You don't need to list every credential — a specific anecdote
+          or formative encounter with an idea often says more than a CV entry.
+        </p>
+        <p>
+          A third paragraph, if needed, about what Logos is: why you started it,
+          what it is trying to do, and who it is for. <em>Logos</em> began as a
+          personal notebook and became something more. It exists to make serious
+          ideas legible to a broad audience — without sacrificing the ideas.
+        </p>
+        <p>
+          A final sentence or two about where you are based, what you are
+          currently working on, or how readers can get in touch. Keep it human.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── Interests ────────────────────────────────────── -->
+  <div class="section-divider"><hr></div>
+  <div class="interests-wrap">
+    <div class="section-label">Areas of Interest</div>
+    <div class="interests-grid">
+
+      <div class="interest-card">
+        <div class="interest-num">01</div>
+        <h3>Philosophy of Logic</h3>
+        <p>What are the rules of inference, and where do they come from?</p>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-num">02</div>
+        <h3>History of Mathematics</h3>
+        <p>How the language of quantity evolved into the foundation of modernity.</p>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-num">03</div>
+        <h3>Philosophy of Mind</h3>
+        <p>The hard problem, consciousness, and everything we still cannot explain.</p>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-num">04</div>
+        <h3>Science & Its Limits</h3>
+        <p>On demarcation, falsifiability, and where empirical inquiry runs out.</p>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-num">05</div>
+        <h3>Political Philosophy</h3>
+        <p>Classical texts, contemporary crises, and what liberal democracy still owes us.</p>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-num">06</div>
+        <h3>Ideas & Culture</h3>
+        <p>The long view on how thought moves through time and shapes the world.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── Selected Essays ──────────────────────────────── -->
+  <div class="essays-wrap">
+    <div class="section-label">Selected Essays</div>
+
+    <a class="essay-list-item" href="articles/logic.html">
+      <div class="essay-list-left">
+        <div class="essay-list-cat">Philosophy · Logic</div>
+        <div class="essay-list-title">The Rise and Fall and Rise of Logic</div>
+      </div>
+      <div class="essay-list-right">14 March 2026 · 18 min</div>
+    </a>
+
+    <a class="essay-list-item" href="#">
+      <div class="essay-list-left">
+        <div class="essay-list-cat">Mathematics</div>
+        <div class="essay-list-title">What Gödel Really Proved</div>
+      </div>
+      <div class="essay-list-right">2 Feb 2026 · 14 min</div>
+    </a>
+
+    <a class="essay-list-item" href="#">
+      <div class="essay-list-left">
+        <div class="essay-list-cat">Philosophy of Mind</div>
+        <div class="essay-list-title">The Hard Problem Has No Easy History</div>
+      </div>
+      <div class="essay-list-right">Winter 2025 · 24 min</div>
+    </a>
+
+    <a class="essay-list-item" href="#">
+      <div class="essay-list-left">
+        <div class="essay-list-cat">Computing</div>
+        <div class="essay-list-title">The Church–Turing Thesis at 90</div>
+      </div>
+      <div class="essay-list-right">Autumn 2025 · 11 min</div>
+    </a>
+
+    <a class="essay-list-item" href="#">
+      <div class="essay-list-left">
+        <div class="essay-list-cat">Science</div>
+        <div class="essay-list-title">On the Silence of the Universe</div>
+      </div>
+      <div class="essay-list-right">Summer 2025 · 12 min</div>
+    </a>
+
+  </div>
+
+  <!-- ─── Contact ──────────────────────────────────────── -->
+  <div class="contact-wrap">
+    <div class="section-label">Get in Touch</div>
+    <div class="contact-box">
+      <div class="contact-text">
+        <h3>I'd love to hear from you.</h3>
+        <p>
+          For correspondence about the essays, pitches, corrections,
+          or just a good argument — reach out. I read everything,
+          though I can't always reply promptly.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:you@yourdomain.com">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">you@yourdomain.com</span>
+        </a>
+        <a class="contact-link" href="#">
+          <span class="contact-link-label">Twitter</span>
+          <span class="contact-link-val">@yourhandle</span>
+        </a>
+        <a class="contact-link" href="#">
+          <span class="contact-link-label">RSS</span>
+          <span class="contact-link-val">Subscribe to feed</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer ────────────────────────────────────────── -->
+  <footer>
+    <p>© 2026 Logos. All rights reserved. &nbsp;·&nbsp;
+      <a href="#">Privacy</a> &nbsp;·&nbsp;
+      <a href="about.html">Contact</a> &nbsp;·&nbsp;
+      <a href="#">RSS</a>
+    </p>
+  </footer>
+
+</body>
+</html>
